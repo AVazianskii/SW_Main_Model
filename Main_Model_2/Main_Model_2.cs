@@ -21,24 +21,29 @@ namespace Character_design
         public Skill_manager Skill_Manager;
         public Range_manager Range_Manager;
         public Force_skill_manager Force_skill_Manager;
+        public Combat_ability_manager Combat_ability_Manager;
+        public Force_ability_manager Force_ability_Manager;
 
 
         private Main_model()
         {
-            Race_Manager = Race__manager.GetInstance();
-            Skill_Manager = Skill_manager.GetInstance();
-            Range_Manager = Range_manager.GetInstance();
-            Age_status_Manager = Age_status_manager.GetInstance();
-            Attribute_Manager = Attribute_manager.GetInstance();
-            Force_skill_Manager = Force_skill_manager.GetInstance();
+            Race_Manager            = Race__manager.GetInstance();
+            Skill_Manager           = Skill_manager.GetInstance();
+            Range_Manager           = Range_manager.GetInstance();
+            Age_status_Manager      = Age_status_manager.GetInstance();
+            Attribute_Manager       = Attribute_manager.GetInstance();
+            Force_skill_Manager     = Force_skill_manager.GetInstance();
+            Combat_ability_Manager  = Combat_ability_manager.GetInstance();
+            Force_ability_Manager   = Force_ability_manager.GetInstance();
+
             Load_async(Race_Manager);
             Load_async(Skill_Manager);
             Load_async(Attribute_Manager);
             Load_all_from(Range_Manager);
             Load_all_from(Age_status_Manager);
             Load_all_from(Force_skill_Manager);
-
-
+            Load_async(Combat_ability_Manager);
+            Load_async(Force_ability_Manager);
         }
 
         public static Main_model GetInstance()

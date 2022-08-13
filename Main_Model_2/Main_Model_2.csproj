@@ -34,8 +34,9 @@
     <Reference Include="BaseViewModel">
       <HintPath>..\..\BaseViewModel.dll</HintPath>
     </Reference>
-    <Reference Include="Manager_template">
-      <HintPath>..\..\Manager_template.dll</HintPath>
+    <Reference Include="Manager_template, Version=1.0.1.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Manager_template\Manager_template\bin\Release\Manager_template.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
