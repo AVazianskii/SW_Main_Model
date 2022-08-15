@@ -39,11 +39,12 @@ namespace Character_design
             Load_async(Race_Manager);
             Load_async(Skill_Manager);
             Load_async(Attribute_Manager);
+            Load_async(Combat_ability_Manager);
+            Load_async(Force_ability_Manager);
             Load_all_from(Range_Manager);
             Load_all_from(Age_status_Manager);
             Load_all_from(Force_skill_Manager);
-            Load_async(Combat_ability_Manager);
-            Load_async(Force_ability_Manager);
+
         }
 
         public static Main_model GetInstance()
