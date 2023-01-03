@@ -23,6 +23,7 @@ namespace Character_design
         public Force_skill_manager Force_skill_Manager;
         public Combat_ability_manager Combat_ability_Manager;
         public Force_ability_manager Force_ability_Manager;
+        public Feature_manager Feature_Manager;
 
 
         private Main_model()
@@ -35,11 +36,13 @@ namespace Character_design
             Force_skill_Manager     = Force_skill_manager.GetInstance();
             Combat_ability_Manager  = Combat_ability_manager.GetInstance();
             Force_ability_Manager   = Force_ability_manager.GetInstance();
+            Feature_Manager         = Feature_manager.GetInstance();
 
             Load_async(Race_Manager);
             Load_async(Skill_Manager);
             Load_async(Attribute_Manager);
             Load_async(Combat_ability_Manager);
+            Load_async(Feature_Manager);
             Load_all_from(Force_ability_Manager);
             Load_all_from(Range_Manager);
             Load_all_from(Age_status_Manager);
