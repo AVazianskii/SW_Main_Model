@@ -26,6 +26,25 @@ namespace Character_design
         public Feature_manager Feature_Manager;
 
 
+
+        public static Main_model GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Main_model();
+            }
+            return instance;
+        }
+        public void DeleteInstance()
+        {
+            if (instance != null)
+            {
+                instance = null;
+            }
+        }
+
+
+
         private Main_model()
         {
             Race_Manager            = Race__manager.GetInstance();
@@ -50,14 +69,8 @@ namespace Character_design
 
         }
 
-        public static Main_model GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new Main_model();
-            }
-            return instance;
-        }
+
+
         private void Load_all_from(Abstract_manager Manager)
         {
             Manager.Run_download_and_upload_process();
