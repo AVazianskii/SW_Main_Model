@@ -39,16 +39,18 @@ namespace Character_design
         {
             if (instance != null)
             {
+
+                Race__manager.OverWriteInstance();
+                Skill_manager.OverWriteInstance();
+                Range_manager.OverWriteInstance();
+                Age_status_manager.OverWriteInstance();
+                Attribute_manager.OverWriteInstance();
+                Force_skill_manager.OverWriteInstance();
+                Combat_ability_manager.OverWriteInstance();
+                Force_skill_manager.OverWriteInstance();
+                Feature_manager.OverWriteInstance();
+
                 instance = new Main_model();
-                //Race__manager.DeleteInstance();
-                //Skill_manager.DeleteInstance();
-                //Range_manager.DeleteInstance();
-                //Age_status_manager.DeleteInstance();
-                //Attribute_manager.DeleteInstance();
-                //Force_skill_manager.DeleteInstance();
-                //Combat_ability_manager.DeleteInstance();
-                //Force_skill_manager.DeleteInstance();
-                //Feature_manager.DeleteInstance();
             }
         }
 
