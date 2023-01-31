@@ -35,11 +35,20 @@ namespace Character_design
             }
             return instance;
         }
-        public void DeleteInstance()
+        public static void OverWriteInstance()
         {
             if (instance != null)
             {
-                instance = null;
+                instance = new Main_model();
+                //Race__manager.DeleteInstance();
+                //Skill_manager.DeleteInstance();
+                //Range_manager.DeleteInstance();
+                //Age_status_manager.DeleteInstance();
+                //Attribute_manager.DeleteInstance();
+                //Force_skill_manager.DeleteInstance();
+                //Combat_ability_manager.DeleteInstance();
+                //Force_skill_manager.DeleteInstance();
+                //Feature_manager.DeleteInstance();
             }
         }
 
