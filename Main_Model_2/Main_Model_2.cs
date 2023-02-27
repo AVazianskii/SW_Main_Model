@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SW_Character_creation;
-using Races_libs;
-using Age_status_libs;
-using Attribute_libs;
-using Skills_libs;
 
 namespace Character_design
 {
     public class Main_model : BaseViewModel_2
     {
-        private static Main_model instance;
+        //private static Main_model instance;
 
         public Race__manager Race_Manager;
         public Age_status_manager Age_status_Manager;
@@ -26,7 +22,7 @@ namespace Character_design
         public Feature_manager Feature_Manager;
 
 
-
+        /*
         public static Main_model GetInstance()
         {
             if (instance == null)
@@ -52,32 +48,51 @@ namespace Character_design
 
                 instance = new Main_model();
             }
+        } 
+        public void Download_all()
+        {
+            ParallelLoopResult result = Parallel.ForEach<Abstract_manager>(
+                new List<Abstract_manager>() 
+                {
+                    Race_Manager,
+                    Skill_Manager,
+                    Range_Manager,
+                    Age_status_Manager,
+                    Attribute_Manager,
+                    Force_skill_Manager,
+                    Combat_ability_Manager,
+                    Force_ability_Manager,
+                    Feature_Manager
+                },
+                Load_all_from
+                );
+        }
+        */
+        public void Download_all()
+        {
+            Load_all_from(Race_Manager);
+            Load_all_from(Range_Manager);
+            Load_all_from(Age_status_Manager);
+            Load_async(Skill_Manager);
+            Load_async(Attribute_Manager);
+            Load_async(Force_skill_Manager);
+            Load_async(Combat_ability_Manager);
+            Load_async(Force_ability_Manager);
+            Load_async(Feature_Manager);
         }
 
 
-
-        private Main_model()
+        public Main_model()
         {
-            Race_Manager            = Race__manager.GetInstance();
-            Skill_Manager           = Skill_manager.GetInstance();
-            Range_Manager           = Range_manager.GetInstance();
-            Age_status_Manager      = Age_status_manager.GetInstance();
-            Attribute_Manager       = Attribute_manager.GetInstance();
-            Force_skill_Manager     = Force_skill_manager.GetInstance();
-            Combat_ability_Manager  = Combat_ability_manager.GetInstance();
-            Force_ability_Manager   = Force_ability_manager.GetInstance();
-            Feature_Manager         = Feature_manager.GetInstance();
-
-            Load_async(Race_Manager);
-            Load_async(Skill_Manager);
-            Load_async(Attribute_Manager);
-            Load_async(Combat_ability_Manager);
-            Load_async(Feature_Manager);
-            Load_all_from(Force_ability_Manager);
-            Load_all_from(Range_Manager);
-            Load_all_from(Age_status_Manager);
-            Load_all_from(Force_skill_Manager);
-
+            Race_Manager            = new Race__manager ();
+            Skill_Manager           = new Skill_manager();
+            Range_Manager           = new Range_manager();
+            Age_status_Manager      = new Age_status_manager();
+            Attribute_Manager       = new Attribute_manager();
+            Force_skill_Manager     = new Force_skill_manager();
+            Combat_ability_Manager  = new Combat_ability_manager();
+            Force_ability_Manager   = new Force_ability_manager();
+            Feature_Manager         = new Feature_manager();
         }
 
 
