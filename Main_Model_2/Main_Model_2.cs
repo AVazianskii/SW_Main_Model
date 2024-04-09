@@ -73,12 +73,12 @@ namespace Character_design
             Load_all_from(Race_Manager);
             Load_all_from(Range_Manager);
             Load_all_from(Age_status_Manager);
-            Load_async(Skill_Manager);
-            Load_async(Attribute_Manager);
-            Load_async(Force_skill_Manager);
-            Load_async(Combat_ability_Manager);
-            Load_async(Force_ability_Manager);
-            Load_async(Feature_Manager);
+            Load_all_from(Skill_Manager);
+            Load_all_from(Attribute_Manager);
+            Load_all_from(Force_skill_Manager);
+            Load_all_from(Combat_ability_Manager);
+            Load_all_from(Force_ability_Manager);
+            Load_all_from(Feature_Manager); // Load_async
         }
 
 
