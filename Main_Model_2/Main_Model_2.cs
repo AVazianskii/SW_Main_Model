@@ -9,8 +9,6 @@ namespace Character_design
 {
     public class Main_model : BaseViewModel_2
     {
-        //private static Main_model instance;
-
         public Race__manager Race_Manager;
         public Age_status_manager Age_status_Manager;
         public Attribute_manager Attribute_Manager;
@@ -22,52 +20,7 @@ namespace Character_design
         public Feature_manager Feature_Manager;
 
 
-        /*
-        public static Main_model GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new Main_model();
-            }
-            return instance;
-        }
-        public static void OverWriteInstance()
-        {
-            if (instance != null)
-            {
 
-                Race__manager.OverWriteInstance();
-                Skill_manager.OverWriteInstance();
-                Range_manager.OverWriteInstance();
-                Age_status_manager.OverWriteInstance();
-                Attribute_manager.OverWriteInstance();
-                Force_skill_manager.OverWriteInstance();
-                Combat_ability_manager.OverWriteInstance();
-                Force_skill_manager.OverWriteInstance();
-                Feature_manager.OverWriteInstance();
-
-                instance = new Main_model();
-            }
-        } 
-        public void Download_all()
-        {
-            ParallelLoopResult result = Parallel.ForEach<Abstract_manager>(
-                new List<Abstract_manager>() 
-                {
-                    Race_Manager,
-                    Skill_Manager,
-                    Range_Manager,
-                    Age_status_Manager,
-                    Attribute_Manager,
-                    Force_skill_Manager,
-                    Combat_ability_Manager,
-                    Force_ability_Manager,
-                    Feature_Manager
-                },
-                Load_all_from
-                );
-        }
-        */
         public void Download_all()
         {
             Load_all_from(Race_Manager);
@@ -80,6 +33,7 @@ namespace Character_design
             Load_all_from(Force_ability_Manager);
             Load_all_from(Feature_Manager); // Load_async
         }
+
 
 
         public Main_model()
